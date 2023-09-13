@@ -1,0 +1,24 @@
+.KeyInfoPage {
+  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height : 100vh;
+
+}
+
+.KeyListPannel {
+  background-color: cadetblue;
+  height : 100vh;
+}
+
+.KeyInfoPannel {
+  background-color: blue;
+  height : 100vh;
+
+}
+
+.KeyStatsPannel {
+  background-color: green;
+  height : 100vh;
+
+}
