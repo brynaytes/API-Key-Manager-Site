@@ -1,46 +1,32 @@
 import './KeyInfoPage.css';
 
-/**
- * Lists out keys
- */
-function KeyListPannel(){
-  return (
-    <div className="KeyListPannel">
-      <h1>1</h1>
+import KeyListPannel from './KeyListPannel';
+import KeyInfoPannel from './KeyInfoPannel';
+import KeyStatsPannel from './KeyStatsPannel';
 
-    </div>
-  )
+import mockdata from '../../mock/key-list'
+
+let keyObjectList
+
+function getKeyInfo() {
+  let temp = [];
+  for (let i = 0; i < mockdata.items.length; i++) {
+    temp.push(mockdata.items[i]);
+  }
+  console.log(temp);
+
+  keyObjectList = temp;
+  console.log("keys", keyObjectList);
 }
 
-/**
- * Gives info about selected key
- */
-function KeyInfoPannel(){
-  return (
-    <div className="KeyInfoPannel">
-      <h1>2</h1>
-    </div>
-  )
-}
-
-/**
- * Lists usage statistics about selected key
- */
-function KeyStatsPannel(){
-  return (
-    <div className="KeyStatsPannel">
-            <h1>3</h1>
-
-    </div>
-  )
-}
 
 function KeyInfoPage() {
+  getKeyInfo()
   return (
     <div className="KeyInfoPage">
-      {  KeyListPannel()}
-      {  KeyInfoPannel()}
-      {  KeyStatsPannel()}
+      < KeyListPannel list={keyObjectList} />
+      < KeyInfoPannel />
+      < KeyStatsPannel />
 
     </div>
   );
